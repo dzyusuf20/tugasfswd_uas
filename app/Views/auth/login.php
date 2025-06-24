@@ -1,20 +1,37 @@
+<?php
+?>
 <?= $this->extend('layout/master') ?>
 <?= $this->section('content') ?>
 <div class="login-box">
   <div class="card card-outline card-primary">
-    <div class="card-header text-center"><b>Login</b></div>
+    <div class="card-header text-center">
+      <a href="#" class="h1"><b>Sistem</b>Arsip</a>
+    </div>
     <div class="card-body">
+      <p class="login-box-msg">Silakan login untuk masuk</p>
+
       <?php if (isset($error)): ?>
-        <div class="alert alert-danger"> <?= $error ?> </div>
+        <div class="alert alert-danger alert-dismissible"> <?= esc($error) ?> </div>
       <?php endif; ?>
+
       <form action="" method="post">
-        <div class="form-group">
+        <div class="input-group mb-3">
           <input type="text" name="username" class="form-control" placeholder="Username" required>
+          <div class="input-group-append">
+            <div class="input-group-text"><span class="fas fa-user"></span></div>
+          </div>
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <input type="password" name="password" class="form-control" placeholder="Password" required>
+          <div class="input-group-append">
+            <div class="input-group-text"><span class="fas fa-lock"></span></div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <div class="row">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
