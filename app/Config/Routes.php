@@ -4,15 +4,10 @@
 use CodeIgniter\Router\RouteCollection;
 
 /** @var RouteCollection $routes */
-$routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Auth');
-$routes->setDefaultMethod('index');
-$routes->setTranslateURIDashes(false);
-$routes->set404Override();
-$routes->setAutoRoute(false);
 
-$routes->get('/', 'Auth::index');
-$routes->match(['get', 'post'], 'login', 'Auth::login');
+
+$routes->get('/', 'PageController::index');
+// $routes->match(['get', 'post'], 'login', 'Auth::login');
 $routes->get('logout', 'Auth::logout');
 
 $routes->group('documents', ['filter' => 'auth'], function($routes) {
